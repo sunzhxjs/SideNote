@@ -4,7 +4,7 @@ chrome.runtime.onInstalled.addListener(function (details) {
   console.log('previousVersion', details.previousVersion);
 });
 
-chrome.browserAction.setBadgeText({text: 'mark'});
+chrome.browserAction.setBadgeText({text: 'note'});
 
 //console.log('\'Allo \'Allo! Event Page for Browser Action');
 chrome.tabs.onReplaced.addListener(function(addedID,removedID){

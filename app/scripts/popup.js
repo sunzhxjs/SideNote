@@ -9,18 +9,24 @@ document.addEventListener('DOMContentLoaded', function () {
     var url = tabs[0].url;
     var hash = md5(url);
     //$('#Notes').val(hash);
-    console.log(hash);
+    //console.log(hash);
     chrome.storage.sync.get(hash,function(result){
     	if(result[hash])
-    	$('#Notes').val(result[hash]);
-    })
+    	$('#Notes').val(result[hash].content);
+    });
     $('#save').click(function(){
     	var data = {};
-    	data[hash]=$('#Notes').val();
+        data[hash]={};
+    	data[hash].content=$('#Notes').val();
+        data[hash].url = url;
     	chrome.storage.sync.set(data,function(){
-    		console.log("saved");
+    		//console.log("saved");
             window.close();
     	});
+    });
+    $('#clear').click(function(){
+        $('#Notes').val('');
+        chrome.storage.sync.remove(hash,function(){ });
     });
 
  });
