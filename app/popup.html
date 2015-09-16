@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html ng-app = "sidenote" ng-csp >
   <head>
     <meta charset="utf-8">
     <!-- build:css styles/vendor.css -->
@@ -9,12 +9,25 @@
     <!-- build:css styles/main.css -->
     <link href="styles/main.css" rel="stylesheet">
     <!-- endbuild -->
-  </head>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/marked/lib/marked.js"></script>
+    <script src="bower_components/angular-marked/angular-marked.js"></script>
+    <script src="scripts/Ngcontroller.js"></script>
+  </head>       
   <body>
-    <h3>Notes For This Page</h3>
-    <textarea id="Notes" row ="10" col="40" placeholder="Note here..."></textarea>
-    <input id="clear"  type="button" value="          Clear         "></input>
-    <input id="save"  type="button" value="    Save To The Cloud   "></input>
+    <div><h3>Notes For This Page</h3></div>
+    <div class="buttonGP">
+    <input id="save"  type="button" value="Save"></input>
+    <input id="clear"  type="button" value="Clear"></input>
+    <input id="edit" type="button" value="Edit" hidden="hidden"></input>
+    </div>
+    <div ng-controller="MainController">
+    <textarea id="Notes" row ="10" col="40"  ng-model="my_markdown" placeholder="Note here...(You can use markdown syntax)"></textarea>
+    <div><h3>Preview</h3></div>
+    <div id="preview" marked="my_markdown">
+    </div>
+    
+        
     
 
     <!-- build:js scripts/vendor.js -->

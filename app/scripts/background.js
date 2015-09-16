@@ -40,6 +40,7 @@ function Notify(url){
 				},3000);
 			});
 			
+			
 			}
 
 		});

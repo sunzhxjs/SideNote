@@ -12,6 +12,7 @@
     "scripts": [
       "scripts/chromereload.js",
       "scripts/md5.min.js",
+      
       "scripts/background.js"
     ],
     "persistent": false

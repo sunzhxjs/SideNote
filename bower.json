@@ -1,7 +1,9 @@
 {
-  "name": "sidemark",
+  "name": "sidenote",
   "version": "0.0.0",
-  "dependencies": {},
+  "dependencies": {
+    "angular": "~1.4.5"
+  },
   "devDependencies": {
     "chai": "~3.2.0",
     "mocha": "~2.3.0"

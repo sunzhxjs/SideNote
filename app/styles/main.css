@@ -1,7 +1,24 @@
 body {
-  padding: 20px;
+  padding: 10px;
+
 }
 textarea {
-	height: 100px;
+	outline: none;
+	
+	height: 130px;
+	width: 200px;
 
+}
+
+button {
+	width: 100%;
+	padding: 5px;
+}
+
+h3 {
+	text-align: center;
+}
+
+#buttonGP {
+	text-align: center;
 }
